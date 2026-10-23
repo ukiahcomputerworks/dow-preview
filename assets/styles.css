@@ -93,6 +93,8 @@ nav a:hover, nav a:focus-visible { border-bottom: 2px solid white; }
 
 .contact { background: var(--paper); }
 .contact h2 { max-width: 850px; margin-bottom: 30px; }
+.contact-button { display: inline-block; margin: 0 0 34px; padding: 14px 18px; background: var(--clay); color: white; font-weight: 800; text-decoration: none; }
+.contact-button:hover, .contact-button:focus-visible { background: var(--navy); }
 .contact-links { display: grid; grid-template-columns: .65fr 1fr 1fr; border-top: 1px solid var(--ink); }
 .contact-links a { display: flex; flex-direction: column; min-height: 110px; padding: 16px 16px 12px 0; text-decoration: none; border-right: 1px solid var(--line); }
 .contact-links a:not(:first-child) { padding-left: 16px; }
@@ -104,6 +106,34 @@ footer { display: flex; align-items: end; justify-content: space-between; gap: 3
 footer strong, footer span { display: block; }
 footer span { margin-top: 3px; color: var(--mist); font-size: 11px; }
 
+.interior-header { position: relative; background: var(--navy); }
+.interior-header .site-header { position: relative; }
+.interior-main { padding: 76px max(20px, calc((100vw - var(--max))/2)); }
+.interior-intro { display: grid; grid-template-columns: .8fr 1.2fr; gap: 64px; margin-bottom: 54px; }
+.interior-intro h1 { max-width: 720px; margin: 0; font: 400 clamp(3.4rem, 7vw, 7rem)/.92 var(--serif); letter-spacing: -.045em; text-wrap: balance; }
+.interior-intro p:last-child { max-width: 620px; margin: 46px 0 0; font-size: 1.15rem; }
+.contact-layout { display: grid; grid-template-columns: .68fr 1.32fr; gap: 58px; align-items: start; }
+.contact-aside { padding-top: 18px; border-top: 1px solid var(--navy); }
+.contact-aside h2 { margin: 0 0 20px; font: 400 2rem/1.05 var(--serif); }
+.contact-aside a { display: block; margin: 0 0 13px; overflow-wrap: anywhere; }
+.contact-aside address { margin-top: 28px; font-style: normal; }
+.form-panel { padding: clamp(24px, 4vw, 48px); background: var(--mist); }
+.form-panel h2 { margin: 0 0 8px; font: 400 clamp(2rem, 4vw, 3.6rem)/1 var(--serif); }
+.form-note { margin: 0 0 28px; color: var(--stone); }
+.contact-form { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.contact-form label { display: grid; gap: 7px; font-size: 12px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+.contact-form label.full { grid-column: 1 / -1; }
+.contact-form input, .contact-form select, .contact-form textarea { width: 100%; min-height: 48px; padding: 11px 12px; border: 1px solid #8294a6; border-radius: 0; background: var(--paper); color: var(--ink); font: 16px/1.4 var(--sans); }
+.contact-form textarea { min-height: 160px; resize: vertical; }
+.contact-form button { grid-column: 1 / -1; width: fit-content; min-height: 48px; padding: 11px 24px; border: 0; background: var(--clay); color: white; font-weight: 800; cursor: pointer; }
+.contact-form button:hover, .contact-form button:focus-visible { background: var(--navy); }
+.form-honey { position: absolute !important; left: -10000px !important; width: 1px !important; height: 1px !important; overflow: hidden !important; }
+.form-privacy { grid-column: 1 / -1; margin: 0; color: var(--stone); font-size: 12px; }
+.thanks-panel { max-width: 850px; padding: clamp(28px, 6vw, 70px); background: var(--mist); }
+.thanks-panel h1 { margin: 0 0 20px; font: 400 clamp(3.2rem, 7vw, 6.6rem)/.92 var(--serif); letter-spacing: -.04em; }
+.thanks-panel p { max-width: 620px; font-size: 1.1rem; }
+.thanks-panel a { display: inline-block; margin-top: 18px; font-weight: 800; }
+
 @media (max-width: 900px) {
   .site-header { padding: 16px 18px; }
   .menu-button { display: block; }
@@ -112,6 +142,8 @@ footer span { margin-top: 3px; color: var(--mist); font-size: 11px; }
   nav a { min-height: 44px; padding: 11px; text-shadow: none; }
   .hero-contact { display: none; }
   .intro-body, .practice, .careers { grid-template-columns: 1fr; gap: 26px; }
+  .interior-intro, .contact-layout { grid-template-columns: 1fr; gap: 28px; }
+  .interior-intro p:last-child { margin-top: 0; }
   .practice-heading { position: static; }
   .people-heading { grid-template-columns: 1fr; gap: 6px; }
   .portrait-row { grid-template-columns: repeat(2, 1fr); }
@@ -136,6 +168,8 @@ footer span { margin-top: 3px; color: var(--mist); font-size: 11px; }
   .no-photo { min-height: 220px; }
   .contact h2 { font-size: 3rem; }
   footer { align-items: flex-start; flex-direction: column; }
+  .contact-form { grid-template-columns: 1fr; }
+  .contact-form label, .contact-form label.full { grid-column: 1; }
 }
 
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
