@@ -6,6 +6,7 @@ const require = createRequire(import.meta.url);
 const { chromium } = require('playwright');
 const root = new URL('../', import.meta.url);
 const evidence = new URL('evidence/', root);
+const target = process.env.TEST_URL || 'http://127.0.0.1:4174/';
 await mkdir(evidence, { recursive: true });
 
 const browser = await chromium.launch({
@@ -18,7 +19,7 @@ for (const width of [1440, 768, 390, 320]) {
   const errors = [];
   page.on('console', message => { if (message.type() === 'error') errors.push(message.text()); });
   page.on('pageerror', error => errors.push(error.message));
-  await page.goto('http://127.0.0.1:4174/', { waitUntil: 'networkidle' });
+  await page.goto(target, { waitUntil: 'networkidle' });
   const data = await page.evaluate(() => ({
     title: document.title,
     h1: document.querySelector('h1')?.textContent.trim(),
@@ -28,7 +29,8 @@ for (const width of [1440, 768, 390, 320]) {
     sections: document.querySelectorAll('main section').length,
     footer: Boolean(document.querySelector('footer')),
   }));
-  await page.screenshot({ path: fileURLToPath(new URL(`local-${width}.png`, evidence)), fullPage: true });
+  const label = target.startsWith('http://127.0.0.1') ? 'local' : 'live';
+  await page.screenshot({ path: fileURLToPath(new URL(`${label}-${width}.png`, evidence)), fullPage: true });
   results.push({ width, ...data, errors });
   await page.close();
 }
