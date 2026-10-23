@@ -1,0 +1,10 @@
+/* Inline credit in the existing footer; no additional band or separator. */
+.cwu-legal-row{display:flex!important;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:4px 20px}
+.cwu-legal-row>p{margin:0}
+#cwu-colophon.cwu-colophon{box-sizing:border-box;display:inline-flex!important;flex:0 0 auto;align-items:center;justify-content:flex-end;align-self:flex-end;max-width:100%;width:auto;margin:0 0 0 auto;padding:0;border:0;background:none;color:inherit;font-family:inherit;font-size:11px;line-height:1.5;text-align:right;letter-spacing:normal;text-transform:none}
+#cwu-colophon .cwu-colophon-credit{display:inline!important;color:inherit;font-size:11px;line-height:1.5;letter-spacing:normal;text-transform:none}
+#cwu-colophon a.cwu-colophon-brand{display:inline!important;color:inherit;background:none;padding:0;margin:0;border:0;font-family:inherit;font-size:12px;font-weight:700;line-height:1.5;letter-spacing:normal;text-transform:none;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+#cwu-colophon a.cwu-colophon-brand:hover{text-decoration-thickness:2px}
+#cwu-colophon a.cwu-colophon-brand:focus-visible{outline:2px solid currentColor;outline-offset:4px}
+#cwu-colophon a.cwu-colophon-brand::before,#cwu-colophon a.cwu-colophon-brand::after{content:none!important}
+.footer-meta #cwu-colophon{display:flex!important}
