@@ -50,12 +50,15 @@ nav a:hover, nav a:focus-visible { border-bottom: 2px solid white; }
 .region-line span { width: 13px; height: 13px; border-radius: 50%; background: var(--clay); }
 .region-line i { position: relative; flex: 1; height: 1px; background: var(--navy); }
 .region-line i::after { content: ""; position: absolute; left: 45%; top: -3px; width: 7px; height: 7px; border-radius: 50%; background: var(--sky); }
-.agency-links { display: grid; grid-template-columns: repeat(3, 1fr); border-block: 1px solid var(--navy); }
-.agency-links > * { display: flex; min-height: 72px; flex-direction: column; justify-content: space-between; padding: 10px 12px; text-decoration: none; border-right: 1px solid var(--line); }
-.agency-links > *:last-child { border-right: 0; }
-.agency-links a:hover, .agency-links a:focus-visible { background: var(--paper); }
-.agency-links span { font: 400 19px/1.2 var(--serif); }
-.agency-links b { font-size: 10px; letter-spacing: .08em; text-transform: uppercase; }
+.agency-links { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.agency-card { position: relative; display: block; min-height: 168px; overflow: hidden; background: var(--navy); color: white; text-decoration: none; }
+.agency-card > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .45s ease, filter .45s ease; }
+.agency-card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(8,27,48,.9), rgba(8,27,48,.08) 75%); }
+.agency-card-copy { position: absolute; z-index: 1; inset: auto 0 0; display: flex; align-items: end; justify-content: space-between; gap: 16px; padding: 16px; }
+.agency-card-copy strong { max-width: 270px; font: 400 21px/1.12 var(--serif); }
+.agency-card-copy b { flex: 0 0 auto; font-size: 9px; letter-spacing: .1em; text-transform: uppercase; }
+.agency-card:not(.agency-card-static):hover > img, .agency-card:not(.agency-card-static):focus-visible > img { transform: scale(1.035); filter: brightness(1.08); }
+.agency-card:not(.agency-card-static):hover .agency-card-copy strong, .agency-card:not(.agency-card-static):focus-visible .agency-card-copy strong { text-decoration: underline; text-underline-offset: 4px; }
 
 .practice { display: grid; grid-template-columns: .8fr 1.2fr; gap: 44px; padding: 36px max(20px, calc((100vw - var(--max))/2)); background: var(--navy); color: white; }
 .practice-heading { position: sticky; top: 110px; align-self: start; }
@@ -154,8 +157,7 @@ footer span { margin-top: 3px; color: var(--mist); font-size: 11px; }
   .portrait-row { grid-template-columns: repeat(2, 1fr); }
   .portrait-row article:nth-child(even) { margin-top: 16px; }
   .agency-links, .contact-links { grid-template-columns: 1fr; }
-  .agency-links > * { min-height: 80px; border-right: 0; border-bottom: 1px solid var(--line); }
-  .agency-links > *:last-child { border-bottom: 0; }
+  .agency-card { min-height: 138px; }
   .contact-links a, .contact-links a:not(:first-child) { min-height: 90px; padding: 14px 0; border-right: 0; border-bottom: 1px solid var(--line); }
 }
 
