@@ -23,9 +23,9 @@ a { color: inherit; }
 .skip-link { position: fixed; top: -60px; left: 16px; z-index: 100; padding: 10px 15px; background: var(--paper); border: 2px solid var(--ink); }
 .skip-link:focus { top: 12px; }
 .site-header { position: absolute; z-index: 10; inset: 0 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 24px; max-width: var(--max); margin: auto; padding: 22px 26px; color: white; }
-.wordmark { display: flex; align-items: baseline; gap: 7px; text-decoration: none; text-shadow: 0 1px 8px #0008; }
-.wordmark strong { font: 700 33px/1 var(--serif); }
-.wordmark span { font-size: 13px; letter-spacing: .05em; text-transform: uppercase; }
+.wordmark { display: flex; align-items: center; gap: 10px; text-decoration: none; text-shadow: 0 1px 8px #0008; }
+.brand-logo { width: 58px; height: 58px; object-fit: contain; border-radius: 50%; background: #ffffffdd; box-shadow: 0 2px 14px #0003; }
+.wordmark span { font: 700 16px/1.1 var(--serif); letter-spacing: .02em; }
 nav { display: flex; align-items: center; gap: 24px; }
 nav a { font-size: 12px; font-weight: 700; letter-spacing: .08em; text-decoration: none; text-transform: uppercase; text-shadow: 0 1px 8px #0008; }
 nav a:hover, nav a:focus-visible { border-bottom: 2px solid white; }
@@ -36,7 +36,7 @@ nav a:hover, nav a:focus-visible { border-bottom: 2px solid white; }
 .hero-shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(10,35,67,.84), rgba(16,59,115,.38) 55%, rgba(16,59,115,.08)), linear-gradient(0deg, rgba(10,35,67,.68), transparent 46%); }
 .hero-copy { position: relative; z-index: 1; width: min(820px, calc(100% - 40px)); margin: 0 max(20px, calc((100vw - var(--max))/2)); padding: 150px 0 72px; }
 .overline, .eyebrow { margin: 0 0 14px; font-size: 11px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
-.hero h1 { max-width: 720px; margin: 0 0 20px; font: 400 clamp(3.5rem, 7.8vw, 7.4rem)/.91 var(--serif); letter-spacing: -.04em; text-wrap: balance; }
+.hero h1 { max-width: 720px; margin: 0 0 20px; font: 400 clamp(3.3rem, 6.8vw, 6.4rem)/.94 var(--serif); letter-spacing: -.04em; text-wrap: balance; }
 .hero-copy > p:last-child { max-width: 640px; margin: 0; font-size: clamp(1.05rem, 1.8vw, 1.35rem); }
 .hero-contact { position: absolute; right: max(20px, calc((100vw - var(--max))/2)); bottom: 28px; z-index: 2; display: flex; flex-direction: column; align-items: flex-end; text-decoration: none; }
 .hero-contact span { font-size: 11px; text-transform: uppercase; letter-spacing: .12em; }
@@ -44,7 +44,7 @@ nav a:hover, nav a:focus-visible { border-bottom: 2px solid white; }
 
 .intro, .people, .contact { padding: 64px max(20px, calc((100vw - var(--max))/2)); }
 .intro-body { display: grid; grid-template-columns: 1.1fr .9fr; gap: 56px; align-items: start; }
-.intro h2, .practice h2, .people h2, .careers h2, .contact h2 { margin: 0; font: 400 clamp(2.6rem, 5.5vw, 5.5rem)/.96 var(--serif); letter-spacing: -.035em; text-wrap: balance; }
+.intro h2, .practice h2, .people h2, .careers h2, .contact h2 { margin: 0; font: 400 clamp(2.45rem, 4.8vw, 4.8rem)/.98 var(--serif); letter-spacing: -.035em; text-wrap: balance; }
 .intro-body > div p { margin: 0 0 16px; font-size: 1.05rem; }
 .region-line { display: flex; align-items: center; margin: 38px 0 22px; }
 .region-line span { width: 13px; height: 13px; border-radius: 50%; background: var(--clay); }
@@ -67,7 +67,7 @@ nav a:hover, nav a:focus-visible { border-bottom: 2px solid white; }
 .practice-list details div { display: grid; grid-template-columns: 1fr 1fr; gap: 0 20px; padding-bottom: 18px; color: var(--mist); }
 .practice-list details p { margin: 0; padding: 8px 0; border-top: 1px solid #ffffff20; }
 .quote { padding: 55px max(20px, calc((100vw - 940px)/2)); text-align: center; background: var(--mist); color: var(--ink); }
-.quote p { margin: 0 auto 12px; font: italic 400 clamp(2.2rem, 5vw, 4.7rem)/1.02 var(--serif); }
+.quote p { margin: 0 auto 12px; font: 400 clamp(2.1rem, 4.2vw, 4rem)/1.04 var(--serif); }
 .quote span { font-size: 10px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
 
 .people-heading { display: grid; grid-template-columns: .38fr 1fr; gap: 30px; margin-bottom: 28px; }
@@ -110,7 +110,7 @@ footer span { margin-top: 3px; color: var(--mist); font-size: 11px; }
 .interior-header .site-header { position: relative; }
 .interior-main { padding: 76px max(20px, calc((100vw - var(--max))/2)); }
 .interior-intro { display: grid; grid-template-columns: .8fr 1.2fr; gap: 64px; margin-bottom: 54px; }
-.interior-intro h1 { max-width: 720px; margin: 0; font: 400 clamp(3.4rem, 7vw, 7rem)/.92 var(--serif); letter-spacing: -.045em; text-wrap: balance; }
+.interior-intro h1 { max-width: 720px; margin: 0; font: 400 clamp(3.2rem, 6vw, 6rem)/.94 var(--serif); letter-spacing: -.045em; text-wrap: balance; }
 .interior-intro p:last-child { max-width: 620px; margin: 46px 0 0; font-size: 1.15rem; }
 .contact-layout { display: grid; grid-template-columns: .68fr 1.32fr; gap: 58px; align-items: start; }
 .contact-aside { padding-top: 18px; border-top: 1px solid var(--navy); }
@@ -133,6 +133,11 @@ footer span { margin-top: 3px; color: var(--mist); font-size: 11px; }
 .thanks-panel h1 { margin: 0 0 20px; font: 400 clamp(3.2rem, 7vw, 6.6rem)/.92 var(--serif); letter-spacing: -.04em; }
 .thanks-panel p { max-width: 620px; font-size: 1.1rem; }
 .thanks-panel a { display: inline-block; margin-top: 18px; font-weight: 800; }
+.privacy-copy { max-width: 820px; }
+.privacy-copy h1 { margin: 0 0 28px; font: 400 clamp(3.1rem, 6vw, 5.8rem)/.94 var(--serif); letter-spacing: -.04em; }
+.privacy-copy h2 { margin: 34px 0 8px; font: 400 2rem/1.1 var(--serif); }
+.privacy-copy p, .privacy-copy li { max-width: 720px; }
+.privacy-copy a { font-weight: 700; }
 
 @media (max-width: 900px) {
   .site-header { padding: 16px 18px; }
@@ -156,6 +161,7 @@ footer span { margin-top: 3px; color: var(--mist); font-size: 11px; }
 
 @media (max-width: 520px) {
   .wordmark span { display: none; }
+  .brand-logo { width: 52px; height: 52px; }
   .hero { min-height: 690px; }
   .hero-copy { padding-bottom: 46px; }
   .hero h1 { font-size: clamp(3.35rem, 16vw, 4.8rem); }
