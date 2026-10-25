@@ -62,12 +62,19 @@ nav a:hover, nav a:focus-visible { border-bottom: 2px solid white; }
 
 .practice { display: grid; grid-template-columns: .8fr 1.2fr; gap: 44px; padding: 36px max(20px, calc((100vw - var(--max))/2)); background: var(--navy); color: white; }
 .practice-heading { position: sticky; top: 110px; align-self: start; }
-.practice-list { border-top: 1px solid #ffffff55; }
-.practice-list details { border-bottom: 1px solid #ffffff55; }
-.practice-list summary { display: flex; align-items: center; justify-content: space-between; min-height: 58px; cursor: pointer; list-style: none; font: 400 clamp(1.4rem, 2.4vw, 2.1rem) var(--serif); }
+.practice-list { display: grid; gap: 10px; }
+.practice-list details { background: #0a315f; }
+.practice-list summary { position: relative; display: flex; align-items: end; justify-content: space-between; min-height: 116px; padding: 18px; overflow: hidden; cursor: pointer; list-style: none; }
 .practice-list summary::-webkit-details-marker, .openings summary::-webkit-details-marker { display: none; }
+.practice-list summary::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(5,25,48,.94), rgba(5,25,48,.45) 62%, rgba(5,25,48,.12)); }
+.practice-list summary img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .45s ease, filter .45s ease; }
+.practice-list summary strong, .practice-list summary span { position: relative; z-index: 1; }
+.practice-list summary strong { max-width: 82%; font: 400 clamp(1.45rem, 2.4vw, 2.1rem)/1.05 var(--serif); }
 .practice-list summary span { font: 700 9px var(--sans); letter-spacing: .14em; text-transform: uppercase; }
-.practice-list details div { display: grid; grid-template-columns: 1fr 1fr; gap: 0 20px; padding-bottom: 18px; color: var(--mist); }
+.practice-list summary:hover img, .practice-list summary:focus-visible img { transform: scale(1.025); filter: brightness(1.08); }
+.practice-list details[open] summary span { font-size: 0; }
+.practice-list details[open] summary span::after { content: "Close"; font: 700 9px var(--sans); letter-spacing: .14em; text-transform: uppercase; }
+.practice-list details div { display: grid; grid-template-columns: 1fr 1fr; gap: 0 20px; padding: 12px 18px 18px; color: var(--mist); }
 .practice-list details p { margin: 0; padding: 8px 0; border-top: 1px solid #ffffff20; }
 .quote { padding: 32px max(20px, calc((100vw - 940px)/2)); text-align: center; background: var(--mist); color: var(--ink); }
 .quote p { margin: 0 auto 12px; font: 400 clamp(2.1rem, 4.2vw, 4rem)/1.04 var(--serif); }
@@ -169,6 +176,8 @@ footer span { margin-top: 3px; color: var(--mist); font-size: 11px; }
   .hero h1 { font-size: clamp(3.35rem, 16vw, 4.8rem); }
   .intro, .people, .contact { padding-block: 26px; }
   .practice, .careers { padding-block: 28px; }
+  .practice-list summary { min-height: 104px; padding: 14px; }
+  .practice-list details div { padding: 8px 14px 14px; }
   .practice-list details div { grid-template-columns: 1fr; }
   .portrait-row { grid-template-columns: 1fr; }
   .portrait-row article:nth-child(even) { margin-top: 0; }
