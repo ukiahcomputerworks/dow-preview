@@ -82,13 +82,12 @@ nav a:hover, nav a:focus-visible { border-bottom: 2px solid white; }
 
 .people-heading { display: grid; grid-template-columns: .38fr 1fr; gap: 24px; margin-bottom: 18px; }
 .portrait-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
-.portrait-row article { position: relative; min-width: 0; }
+.portrait-row article { position: relative; min-width: 0; align-self: start; }
 .portrait-row img { display: block; width: 100%; height: auto; aspect-ratio: 4/5; object-fit: cover; filter: saturate(.72) contrast(1.03); }
-.portrait-row article:nth-child(even) { margin-top: 24px; }
 .portrait-row h3 { margin: 10px 0 2px; font: 400 24px var(--serif); }
 .portrait-row p { margin: 0 0 4px; color: var(--stone); }
 .portrait-row a { font-size: 12px; }
-.no-photo { display: grid; min-height: 330px; padding: 20px; background: var(--sky); align-items: end; }
+.no-photo { display: grid; min-height: 0; aspect-ratio: 4/5; padding: 20px; background: var(--sky); align-items: end; }
 .no-photo span { display: block; font: 400 62px var(--serif); opacity: .7; }
 
 .careers { display: grid; grid-template-columns: .78fr 1.22fr; gap: 44px; padding: 36px max(20px, calc((100vw - var(--max))/2)); background: var(--mist); }
@@ -162,7 +161,6 @@ footer span { margin-top: 3px; color: var(--mist); font-size: 11px; }
   .practice-heading { position: static; }
   .people-heading { grid-template-columns: 1fr; gap: 6px; }
   .portrait-row { grid-template-columns: repeat(2, 1fr); }
-  .portrait-row article:nth-child(even) { margin-top: 16px; }
   .agency-links, .contact-links { grid-template-columns: 1fr; }
   .agency-card { min-height: 138px; }
   .contact-links a, .contact-links a:not(:first-child) { min-height: 90px; padding: 14px 0; border-right: 0; border-bottom: 1px solid var(--line); }
@@ -180,9 +178,8 @@ footer span { margin-top: 3px; color: var(--mist); font-size: 11px; }
   .practice-list details div { padding: 8px 14px 14px; }
   .practice-list details div { grid-template-columns: 1fr; }
   .portrait-row { grid-template-columns: 1fr; }
-  .portrait-row article:nth-child(even) { margin-top: 0; }
   .portrait-row img { aspect-ratio: 5/4; object-position: center 24%; }
-  .no-photo { min-height: 180px; }
+  .no-photo { aspect-ratio: 5/4; }
   .contact h2 { font-size: 3rem; }
   footer { align-items: flex-start; flex-direction: column; }
   .contact-form { grid-template-columns: 1fr; }
